@@ -7,7 +7,7 @@ class Uploader
     content = client.get_file(path)
 
     bucket.files.create(
-      :key => path,
+      :key => path.sub('/tactics/', ''),
       :body => content,
       :public => true
     )
